@@ -1,0 +1,22 @@
+<form [formGroup]="adminform" class="adminform">
+  <!-- Id -->
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      type="text"
+      placeholder="Product Id"
+      formControlName="id"
+    /> </mat-form-field
+  ><br />
+  <mat-dialog-actions align="end">
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      cdkFocusInitial
+      (click)="deletedata()"
+    >
+      Delete Product
+    </button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,57 @@
+<!-- 
+<form [formGroup]="loginform" (ngSubmit)="loginuser()">
+  <label for="username">UserName</label><br>
+  <input type="text" name="username" formControlName="username"><br>
+  <label for="password">Password</label><br>
+  <input type="password" name="password" formControlName="password"><br>
+  <button>Submit</button>
+</form> -->
+<form [formGroup]="loginform">
+  <div class="imgcontainer">
+    <img src="../assets/avatar.png" alt="Avatar" class="avatar" />
+  </div>
+
+  <div class="container">
+    <label for="email"><b>Email</b></label>
+    <input
+      type="text"
+      placeholder="Enter Username"
+      name="email"
+      required
+      formControlName="email"
+    />
+
+    <label for="psw"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="psw"
+      required
+      formControlName="password"
+    />
+    <button
+      mat-button
+      color="primary"
+      type="submit"
+      [disabled]="loginform.invalid"
+      (click)="loginuser()"
+    >
+      Login
+    </button>
+    <!-- <button type="submit" >Login</button> -->
+    <label>
+      <input
+        type="checkbox"
+        checked="checked"
+        name="remember"
+        formControlName="remember"
+      />
+      Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color: #f1f1f1">
+    <button type="button" class="cancelbtn" routerLink="home">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>

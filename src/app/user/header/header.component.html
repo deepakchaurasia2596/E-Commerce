@@ -1,0 +1,121 @@
+<!-- <mat-toolbar color="primary">
+  <div class="maindiv">
+    <div class="logo">
+      <mat-icon>store</mat-icon>
+      <span routerLink="home">E-commerce</span>
+    </div>
+    <div class="navlist" *ngIf="!deviceSm">
+      <a>
+        <input
+          type="search"
+          name="searchbox"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="Search products"
+      /></a>
+
+      <a mat-button routerLink="signup">SignUp</a>
+      <a mat-button routerLink="login">Login</a>
+      <a mat-button routerLink="home">Home</a>
+      <a mat-button routerLink="products">Products</a>
+      <a mat-raised-button color="warn" (click)="adminDialoge()">Admin</a>
+      <a
+        mat-button
+        color="warn"
+        matBadgeColor="accent"
+        matBadge="{{ totalItem }}"
+        routerLink="cart"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+    </div>
+    <div class="navlistIcon" *ngIf="deviceSm">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+ -->
+<mat-toolbar color="primary">
+  <div class="maindiv">
+    <div class="logo">
+      <mat-icon>store</mat-icon>
+      <span routerLink="home">E-commerce</span>
+    </div>
+    <!-- ------------------ header navlist----------------------- -->
+    <div class="navlist">
+      <a>
+        <input
+          type="search"
+          name="searchbox"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="Search products"
+      /></a>
+
+      <a mat-button routerLink="signup">SignUp</a>
+      <a mat-button routerLink="login">Login</a>
+      <a mat-button routerLink="home">Home</a>
+      <a mat-button routerLink="products">Products</a>
+      <a mat-raised-button color="warn" (click)="adminDialoge()">Admin</a>
+      <a
+        mat-button
+        color="warn"
+        matBadgeColor="accent"
+        matBadge="{{ badge }}"
+        routerLink="cart"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+    </div>
+    <!-- -------------------header naviconlist------------------------- -->
+    <div class="navlistIcon">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item>
+        <input
+          type="search"
+          name="searchbox"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="Search products"
+        />
+      </a>
+      <a mat-list-item routerLink="signup"> SignUp </a>
+      <a mat-list-item routerLink="login">Login </a>
+      <a mat-list-item routerLink="home"> Home </a>
+      <a mat-list-item routerLink="products"> Products </a>
+      <a mat-list-item (click)="adminDialoge()"> Admin </a>
+      <a
+        class="carticon"
+        mat-list-item
+        matBadge="{{ badge }}"
+        routerLink="cart"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

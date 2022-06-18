@@ -1,0 +1,25 @@
+.maindiv {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid green;
+  gap: 20rem;
+  padding: 5em;
+  margin: 3em;
+}
+::ng-deep .ngxImageZoomContainer > img {
+  height: 400px;
+  width: 300px;
+}
+.btncontainer {
+  display: flex;
+  gap: 2rem;
+}
+.ratingProduct {
+  border-radius: 2px;
+  background-color: green;
+  width: 10%;
+}
+span {
+  color: white;
+  display: inline-block;
+}

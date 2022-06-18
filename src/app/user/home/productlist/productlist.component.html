@@ -1,0 +1,39 @@
+<h2 class="productHeading">Deal of the <b> Day</b></h2>
+<hr class="productBar" />
+<div class="content" *ngIf="!flag">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      class="cardmaindiv"
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let item of productList | filter: searchKey:'title'"
+    >
+      <mat-card class="mat-elevation-z4">
+        <img class="imgproduct" mat-card-image src="{{ item.image }}" />
+        <h5>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </h5>
+        <p style="color: green">Special Price</p>
+        <br />
+        <p class="rating">
+          Rating:{{ item.rating }}
+          <span style="color: white">&#8902;&#8902;&#8902;</span>
+        </p>
+        <p>{{ item.price | currency: "INR" }}</p>
+        <mat-card-actions>
+          <div class="productbtn">
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/home', item.id]"
+            >
+              View
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="flag"></app-spinner>

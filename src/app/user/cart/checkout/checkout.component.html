@@ -1,0 +1,68 @@
+<div class="maindiv">
+  <mat-card class="productcard" *ngIf="flag">
+    <div class="productdetails">
+      <h1 class="productheading">YOUR PRODUCTS</h1>
+      <div class="product" *ngFor="let data of checkotdata[0].checkOutProduct">
+        <div class="imgdiv">
+          <img src="{{ data.image }}" alt="" />
+        </div>
+        <div class="productlist">
+          <h2>{{ data.title }}</h2>
+          <h3>Price:{{ data.price | currency:'INR'}}</h3>
+          <h4>Quantity:{{ data.quantity }}</h4>
+          <h5>Total Price:{{ data.total | currency:'INR' }}</h5>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="btncart">
+      <button mat-raised-button color="primary">
+        GrandTotal Price:{{ totalPrice | currency: "INR" }}
+      </button>
+      <div class="btncart1"></div>
+      <button mat-raised-button color="primary">
+        Total Quantity:{{ totalQuantity }}
+      </button>
+      <div class="btncart2"></div>
+    </div>
+  </mat-card>
+  <div class="paymentdetails">
+    <mat-card>
+      <mat-card-title class="payment">PAYMENT</mat-card-title>
+      <mat-form-field appearance="legacy">
+        <mat-label class="cardinput">Card Number</mat-label>
+        <input
+          matInput
+          placeholder="Enter 16 digit card number"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="legacy">
+        <mat-label>Name on Card</mat-label>
+        <input
+          matInput
+          placeholder="Enter 16 digit card number"
+        /> </mat-form-field
+      ><br />
+      <!-- validation -->
+      <mat-form-field appearance="legacy">
+        <mat-label>Valid thru</mat-label>
+        <input matInput placeholder="dd/mm" /> </mat-form-field
+      ><span>&nbsp;&nbsp;&nbsp;</span>
+      <!-- validation card -->
+      <!-- cvv -->
+      <mat-form-field appearance="legacy">
+        <mat-label>CVV number</mat-label>
+        <input
+          matInput
+          placeholder="cvv number"
+          type="password"
+        /> </mat-form-field
+      ><br />
+      <!-- vcc -->
+      <mat-card-actions class="paymentbtn">
+        <button mat-button>BUY NOW</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<!-- <button routerLink="/cart">click</button> -->

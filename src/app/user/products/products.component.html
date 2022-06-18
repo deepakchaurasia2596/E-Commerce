@@ -1,0 +1,33 @@
+<div class="content" *ngIf="!flag">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" class="productdiv">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let item of productList | filter: searchKey:'title'"
+    >
+      <mat-card class="mat-elevation-z4">
+        <img class="imgproduct" mat-card-image src="{{ item.image }}" />
+        <h5>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </h5>
+        <p>
+          {{ item.description }}
+        </p>
+        <p><strong>Price:</strong>{{ item.price | currency: "INR" }}</p>
+        <mat-card-actions>
+          <div class="productbtn">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="postProductCart(item)"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="flag"></app-spinner>

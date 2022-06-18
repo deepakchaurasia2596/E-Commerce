@@ -1,0 +1,46 @@
+.example-container {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  border: 1px solid #555;
+}
+.profile-card {
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.mat-column-demo-position {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+.addbtn {
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+/* -----------------------------------------------table css-------------------------- */
+table {
+  width: 100%;
+  padding: 0 2rem 0 2rem;
+}
+th.mat-header-cell,
+td.mat-cell {
+  padding: 31px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+/* ------------------------table css end---------------------------- */
+.adminbtn {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}

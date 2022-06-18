@@ -1,0 +1,40 @@
+<div class="maindiv" *ngIf="!flag" >
+  <div class="imgContainer">
+    <lib-ngx-image-zoom
+      thumbImage="{{ userRoute.image }}"
+      [magnification]="0.7"
+      [enableScrollZoom]="true"
+      [enableLens]="true"
+      [lensWidth]="120"
+      zoomMode="hover"
+    ></lib-ngx-image-zoom>
+  </div>
+
+  <div class="productDetail">
+    <h1>{{ userRoute.category | titlecase }}</h1>
+    <h1>{{ userRoute.title }}</h1>
+    <h1>Description</h1>
+    <p>{{ userRoute.description }}</p>
+    <h4 class="ratingProduct">
+      {{ userRoute.rating }} <span>&#8902;&#8902;&#8902;</span>
+    </h4>
+    <h2>{{ userRoute.price | currency: "INR" }}</h2>
+
+    <div class="btncontainer">
+      <div class="homebtn">
+        <button mat-raised-button color="primary" routerLink="/home">
+          Home
+        </button>
+      </div>
+      <div class="addbtn">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="postProductCart(userRoute)"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

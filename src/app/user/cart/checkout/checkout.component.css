@@ -1,0 +1,39 @@
+.maindiv{
+    display:flex;
+    justify-content: space-evenly;
+    margin: 3rem;
+  }
+  .productcard{
+    width: 60%;
+  }
+  .payment{
+    text-align: center;
+  }
+  .cardinput{
+    width: 100%;
+  }
+  .paymentbtn{
+    text-align: center;
+  }
+  .imgdiv img{
+    width: 100px;
+    height: 150px;
+  }
+  .productlist{
+    border: 2px solid red;
+    width: 50%;
+  }
+  .product{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .productheading{
+    text-align: center;
+  }
+  .btncart{
+    display: flex;
+    justify-content: space-evenly;
+  padding-left: 17em;
+  }
